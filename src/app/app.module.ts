@@ -88,7 +88,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [HeaderAppComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
