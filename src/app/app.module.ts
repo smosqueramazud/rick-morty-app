@@ -41,12 +41,14 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 import { HeaderAppComponent } from './components/header-app/header-app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { DetallePersonajeComponent } from './pages/detalle-personaje/detalle-personaje.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
-    HeaderAppComponent
+    HeaderAppComponent,
+    DetallePersonajeComponent
   ],
   imports: [
     BrowserModule,

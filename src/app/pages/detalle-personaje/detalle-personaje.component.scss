@@ -1,0 +1,69 @@
+.o-content{
+    display: flex;
+    justify-content: center;
+    padding-top: 4vh;
+}
+
+.example-card {
+    max-width: 500px;
+  }
+  
+.example-header-image {
+    background-size: cover;
+    width: 20vh;
+    height: 20vh;
+}
+
+.o-box-table-cards{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
+  gap: 2vh;
+}
+
+.o-box-table-cards-table-data{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: auto;
+  gap: 1vh;
+}
+
+.mat-card-image{
+  width: 15vh !important;
+  min-width: 20vh !important;
+}
+
+.o-box-table-cards-box-img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2vh 0;
+}
+
+.o-button-hover:hover{
+  background-color: var(--hover-button-color);
+}
+
+.o-button-white-hover:hover{
+  background-color: var(--hover-white-color);
+}
+
+.o-grid-episode{
+    display: grid;
+    gap: 1vh;
+    max-height: 20vh;
+    overflow-y: scroll;
+    padding-right: 2vh;
+}
+
+.o-border-top{
+    border-top: 2px solid black;
+    padding-top: 2vh;
+}
+
+.o-box-table-cards-table-data-episodes{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-auto-rows: auto;
+    gap: 1vh;
+}
