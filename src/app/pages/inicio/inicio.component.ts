@@ -69,4 +69,17 @@ export class InicioComponent implements OnInit {
     )
   }
 
+  vistaLocacion(url: string){
+    console.log(url);
+    this.endpoints.getLocacion(url).subscribe(
+      res => {
+        console.log(res)
+      },
+      err => {
+        console.log(err)
+        alert(`Ha ocurrido un error consultando la lista de superhéroes, por favor intenta de nuevo mas tarde`)
+      }
+    )
+  }
+
 }

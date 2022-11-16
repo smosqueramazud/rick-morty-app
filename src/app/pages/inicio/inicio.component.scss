@@ -87,6 +87,12 @@ table {
     background-color: var(--hover-white-color);
 }
 
+.o-button-locacion{
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
 @media (min-width: 1280px) and (max-width: 1400px){
 
     .o-button-add{

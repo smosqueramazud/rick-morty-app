@@ -42,13 +42,15 @@ import { HeaderAppComponent } from './components/header-app/header-app.component
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { DetallePersonajeComponent } from './pages/detalle-personaje/detalle-personaje.component';
+import { DetalleLocacionComponent } from './pages/detalle-locacion/detalle-locacion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
     HeaderAppComponent,
-    DetallePersonajeComponent
+    DetallePersonajeComponent,
+    DetalleLocacionComponent
   ],
   imports: [
     BrowserModule,

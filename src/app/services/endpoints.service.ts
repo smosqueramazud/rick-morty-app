@@ -28,8 +28,15 @@ export class EndpointsService {
   }
 
     //servicio que trae un personaje especifico por su id
-    getPersonajeId(id:any){
+  getPersonajeId(id:any){
       let url = `${this.urlApi}/character/${id}`;
+      return this.http.get(url);
+  }
+
+      //servicio que trae un personaje especifico por su id
+  getLocacion(link:any){
+      console.log(link)
+      let url = link;
       return this.http.get(url);
   }
 }
