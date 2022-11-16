@@ -26,5 +26,11 @@ export class EndpointsService {
       let url = `${this.urlApi}/character`;
       return this.http.get<Personajes>(url);
   }
+
+    //servicio que trae un personaje especifico por su id
+    getPersonajeId(id:any){
+      let url = `${this.urlApi}/character/${id}`;
+      return this.http.get(url);
+  }
 }
 

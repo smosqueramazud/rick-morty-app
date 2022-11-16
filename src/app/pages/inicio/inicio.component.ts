@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { EndpointsService } from 'src/app/services/endpoints.service';
 
 @Component({
@@ -10,9 +11,10 @@ export class InicioComponent implements OnInit {
 
   movil = false;
   arrayPersonajes: any;
-  displayedColumns: string[] = ['imagen', 'nombre', 'estado', 'especie', 'ultima locacion', 'ultimo episodio', 'modificar', 'eliminar'];
+  displayedColumns: string[] = ['imagen', 'nombre', 'estado', 'especie', 'ultima locacion', 'ultimo episodio', 'modificar'];
 
-  constructor(private endpoints: EndpointsService) { }
+  constructor(private endpoints: EndpointsService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.obtenerPersonajes();
@@ -52,6 +54,19 @@ export class InicioComponent implements OnInit {
       this.movil = false
     }
     window.sessionStorage.setItem('movil', String(this.movil));
+  }
+
+  vistaPersonaje(id:number){
+
+    this.endpoints.getPersonajeId(id).subscribe(
+      res => {
+        this.router.navigateByUrl('/personaje', {state: {res}});
+      },
+      err => {
+        console.log(err)
+        alert(`Ha ocurrido un error consultando la lista de superhéroes, por favor intenta de nuevo mas tarde`)
+      }
+    )
   }
 
 }
