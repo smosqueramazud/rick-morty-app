@@ -9,6 +9,8 @@ import { EndpointsService } from 'src/app/services/endpoints.service';
 export class InicioComponent implements OnInit {
 
   movil = false;
+  arrayPersonajes: any;
+  displayedColumns: string[] = ['imagen', 'nombre', 'estado', 'especie', 'ultima locacion', 'ultimo episodio', 'modificar', 'eliminar'];
 
   constructor(private endpoints: EndpointsService) { }
 
@@ -33,6 +35,8 @@ export class InicioComponent implements OnInit {
     this.endpoints.getPersonajes().subscribe(
       res => {
         console.log(res.results);
+        this.arrayPersonajes = res.results;
+        console.log(this.arrayPersonajes);
       },
       err => {
         console.log(err)
