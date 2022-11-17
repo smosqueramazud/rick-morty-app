@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetalleLocacionComponent implements OnInit {
 
+  locacion: any;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.locacion = window.history.state.res
+    console.log(this.locacion)
   }
 
 }

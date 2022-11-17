@@ -1,1 +1,26 @@
-<p>detalle-locacion works!</p>
+<div class="o-content">
+    <h1 class="title">{{locacion.name}}</h1>
+    <mat-card class="example-card">
+        <mat-card-content>
+          <div class="o-box-table-cards-table-data font-size">
+            <p class="negrita">Tipo de locación:</p>
+            <p class="text-right">{{locacion.type}}</p>
+    
+            <p class="negrita">Dimensión:</p>
+            <p class="text-right">{{locacion.dimension}}</p>
+
+            <p class="negrita">Número de residentes:</p>
+            <p class="text-right">{{locacion.residents.length}}</p>
+          </div>
+    
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button class="o-button-white-hover">
+            <mat-icon>create</mat-icon>
+        </button>
+        <button mat-raised-button color="warn" class="o-button-hover">
+          <mat-icon>delete</mat-icon>
+      </button>
+        </mat-card-actions>
+      </mat-card>
+</div>

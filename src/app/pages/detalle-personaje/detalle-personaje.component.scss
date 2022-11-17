@@ -67,3 +67,42 @@
     grid-auto-rows: auto;
     gap: 1vh;
 }
+
+.o-box-header-card{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 45% 55%;
+  margin-bottom: 3vh;
+}
+
+::ng-deep .mat-card-header-text {
+  margin: 0px !important;
+}
+
+.o-box-header-card-titles--grid{
+  display: grid;
+  grid-template-rows: 40% 25% 20%;
+}
+
+.o-name{
+  font-size: 4vh;
+}
+
+.o-estado{
+  font-size: 3vh;
+}
+
+.o-box-header-card-titles-icon{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.icon-add{
+  color: gray;
+  cursor: pointer;
+}
+
+.icon-rm{
+  color: gold;
+  cursor: pointer;
+}

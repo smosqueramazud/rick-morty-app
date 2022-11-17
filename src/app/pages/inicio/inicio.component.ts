@@ -73,7 +73,7 @@ export class InicioComponent implements OnInit {
     console.log(url);
     this.endpoints.getLocacion(url).subscribe(
       res => {
-        console.log(res)
+        this.router.navigateByUrl('/locacion', {state: {res}});
       },
       err => {
         console.log(err)

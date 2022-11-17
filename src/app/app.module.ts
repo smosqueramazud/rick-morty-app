@@ -43,6 +43,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { DetallePersonajeComponent } from './pages/detalle-personaje/detalle-personaje.component';
 import { DetalleLocacionComponent } from './pages/detalle-locacion/detalle-locacion.component';
+import { DialogFavoritosComponent } from './components/dialog-favoritos/dialog-favoritos.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { DetalleLocacionComponent } from './pages/detalle-locacion/detalle-locac
     InicioComponent,
     HeaderAppComponent,
     DetallePersonajeComponent,
-    DetalleLocacionComponent
+    DetalleLocacionComponent,
+    DialogFavoritosComponent
   ],
   imports: [
     BrowserModule,
@@ -92,7 +94,8 @@ import { DetalleLocacionComponent } from './pages/detalle-locacion/detalle-locac
     HttpClientModule,
     FormsModule,
   ],
-  providers: [HeaderAppComponent],
+  providers: [HeaderAppComponent,
+    DialogFavoritosComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

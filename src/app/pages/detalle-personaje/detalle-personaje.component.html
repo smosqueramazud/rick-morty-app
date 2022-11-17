@@ -1,12 +1,22 @@
 <div class="o-content">
-    <mat-card class="example-card">
+    <mat-card class="example-card"> 
         <mat-card-header>
-          <img mat-card-avatar class="example-header-image" src="{{personaje.image}}" alt="logo">
-          <mat-card-title>{{personaje.name}}</mat-card-title>
-          <mat-card-subtitle>Estado: {{personaje.status}}</mat-card-subtitle>
+          <div class="o-box-header-card">
+            <div>
+              <img mat-card-avatar class="example-header-image" src="{{personaje.image}}" alt="logo">
+            </div>
+            <div class="o-box-header-card-titles--grid">
+              <div class="o-box-header-card-titles-icon">
+                <mat-icon (click)="favoritoAdd()" class="icon-add" *ngIf="!fav">star</mat-icon>
+                <mat-icon (click)="favoritoRm()" class="icon-rm" *ngIf="fav">star</mat-icon>
+              </div>
+              <mat-card-title class="o-name text-right">{{personaje.name}}</mat-card-title>
+              <mat-card-subtitle class="o-estado text-right">Estado: {{personaje.status}}</mat-card-subtitle>
+            </div>
+          </div>
         </mat-card-header>
         <mat-card-content>
-          <div class="o-box-table-cards-table-data">
+          <div class="o-box-table-cards-table-data font-size">
             <p class="negrita">Origen (nombre):</p>
             <p class="text-right">{{personaje.origin.name}}</p>
     
@@ -27,7 +37,7 @@
     
           </div>
     
-          <div class="o-box-table-cards-table-data-episodes o-border-top">
+          <div class="o-box-table-cards-table-data-episodes o-border-top font-size">
             <div>
                 <p class="negrita">Episodios:</p>
             </div>

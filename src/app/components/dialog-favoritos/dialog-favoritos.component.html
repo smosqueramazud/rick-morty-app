@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>Personajes Favoritos</h1>
+<div mat-dialog-content *ngIf="sinFavoritos">
+  <p>No has seleccionado ningun personaje como favorito!</p>
+</div>
+<div mat-dialog-content *ngIf="!sinFavoritos">
+    <div *ngFor="let fav of favoritos let i = index" class="o-box-favoritos">
+        <div>
+            <img src="{{fav.image}}" alt="" width="50" height="50">   
+        </div>
+            
+        <div>
+            <p class="negrita">{{fav.name}}</p>
+        </div>
+            
+        <div>
+            <mat-icon (click)="favoritoRm(i)" class="icon-rm">star</mat-icon>
+        </div>
+    </div>
+    
+  </div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Ok</button>
+</div>

@@ -1,0 +1,13 @@
+.icon-rm{
+    color: gold;
+    cursor: pointer;
+  }
+
+  .o-box-favoritos{
+    display: grid;
+    grid-template-columns: 20% 60% 10%;
+    justify-items: center;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    padding: 2vh 0 1vh 0;
+  }
