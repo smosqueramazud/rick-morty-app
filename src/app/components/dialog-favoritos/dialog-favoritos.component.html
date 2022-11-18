@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>Personajes Favoritos</h1>
+<h1 mat-dialog-title class="o-title">Personajes Favoritos</h1>
 <div mat-dialog-content *ngIf="sinFavoritos">
   <p>No has seleccionado ningun personaje como favorito!</p>
 </div>
@@ -19,5 +19,5 @@
     
   </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">Ok</button>
+  <button mat-button (click)="onNoClick()" class="o-aceptar-button">Aceptar</button>
 </div>

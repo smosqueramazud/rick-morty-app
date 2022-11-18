@@ -21,6 +21,11 @@ export class InicioComponent implements OnInit {
     this.validarScreenWidth();
   }
 
+  /** @method ObtenerInformacionApi 
+   * @description Metodo en cargado de consumir el servicio que trae la informacion inicial de la api
+   * @author Sebastian Mosquera
+   * @date 2022/11/15
+   */
   obtenerIformacionApi(){
     this.endpoints.getAll().subscribe(
       res => {
@@ -28,7 +33,7 @@ export class InicioComponent implements OnInit {
       },
       err => {
         console.log(err)
-        alert(`Ha ocurrido un error consultando la lista de superhéroes, por favor intenta de nuevo mas tarde`)
+        alert(`Ha ocurrido un error consultando la lista de personajes, por favor intenta de nuevo mas tarde`)
       }
     )
   }
@@ -42,7 +47,7 @@ export class InicioComponent implements OnInit {
       },
       err => {
         console.log(err)
-        alert(`Ha ocurrido un error consultando la lista de superhéroes, por favor intenta de nuevo mas tarde`)
+        alert(`Ha ocurrido un error consultando la lista de personajes, por favor intenta de nuevo mas tarde`)
       }
     )
   }
@@ -64,20 +69,19 @@ export class InicioComponent implements OnInit {
       },
       err => {
         console.log(err)
-        alert(`Ha ocurrido un error consultando la lista de superhéroes, por favor intenta de nuevo mas tarde`)
+        alert(`Ha ocurrido un error consultando la lista de personajes, por favor intenta de nuevo mas tarde`)
       }
     )
   }
 
   vistaLocacion(url: string){
-    console.log(url);
     this.endpoints.getLocacion(url).subscribe(
       res => {
         this.router.navigateByUrl('/locacion', {state: {res}});
       },
       err => {
         console.log(err)
-        alert(`Ha ocurrido un error consultando la lista de superhéroes, por favor intenta de nuevo mas tarde`)
+        alert(`Ha ocurrido un error consultando la lista de personajes, por favor intenta de nuevo mas tarde`)
       }
     )
   }

@@ -4,32 +4,38 @@
       <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item routerLink="/inicio" *ngIf="!movil">
-        <mat-icon>home</mat-icon>
+      <button mat-menu-item (click)="goInicio()" *ngIf="!movil">
+        <mat-icon class="o-color-icon">home</mat-icon>
         <span>Inicio</span>
       </button>
-      <button mat-menu-item routerLink="/vista-cards" *ngIf="movil">
-        <mat-icon>home</mat-icon>
+      <button mat-menu-item (click)="goInicio()" *ngIf="movil">
+        <mat-icon class="o-color-icon">home</mat-icon>
         <span>Inicio</span>
       </button>
-      <button mat-menu-item routerLink="/agregar" class="o-button--hover">
-        <mat-icon>add</mat-icon>
-        <span>Agregar Superhéroe</span>
+      <button mat-menu-item (click)="openDialog()" class="o-button--hover">
+        <mat-icon class="o-color-icon">star</mat-icon>
+        <span>Favoritos</span>
+      </button>
+      <button mat-menu-item (click)="openDocumentacion()" class="o-button--hover">
+        <mat-icon class="o-color-icon">help</mat-icon>
+        <span>Documentación</span>
       </button>
     </mat-menu>
     <span>Rick & Morty Api</span>
       <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Rick_and_Morty.svg" class="o-box-logo-marvel">
     <span class="example-spacer"></span>
-    <div class="o-movil">
-      <a mat-button routerLink="/inicio" > Inicio</a>
-      <a mat-button routerLink="/agregar"> Agregar Superhéroe</a>
-      <a mat-button routerLink="/modificar"> Modificar Superhéroe</a>
-      <a mat-button> Contacts </a>
+    <div class="o-movil o-box-menu-items">
+      <button mat-button class="o-inicio-button" (click)="goInicio()"> Inicio</button>
+      <button mat-button class="o-inicio-button" (click)="openDialog()"> Favoritos</button>
+      <button mat-button class="o-inicio-button" (click)="openDocumentacion()"> Documentación</button>
     </div>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" class="o-movil" (click)="openDialog()">
-      <mat-icon>favorite</mat-icon>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" class="o-movil" (click)="goInicio()">
+      <mat-icon>home</mat-icon>
     </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" class="o-movil">
-      <mat-icon>share</mat-icon>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" class="o-movil" (click)="openDialog()">
+      <mat-icon>star</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" class="o-movil" (click)="openDocumentacion()">
+      <mat-icon>help</mat-icon>
     </button>
   </mat-toolbar>

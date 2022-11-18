@@ -17,44 +17,36 @@
         </mat-card-header>
         <mat-card-content>
           <div class="o-box-table-cards-table-data font-size">
-            <p class="negrita">Origen (nombre):</p>
-            <p class="text-right">{{personaje.origin.name}}</p>
+            <p class="negrita o-color">Origen (nombre):</p>
+            <p class="text-right o-color">{{personaje.origin.name}}</p>
     
-            <p class="negrita">Origen (url):</p>
-            <a href="personaje.location.url" class="text-right">{{personaje.origin.url}}</a>
+            <p class="negrita o-color">Origen (url):</p>
+            <a class="text-right o-color">{{personaje.origin.url}}</a>
     
-            <p class="negrita">Genero:</p>
-            <p class="text-right">{{personaje.gender}}</p>
+            <p class="negrita o-color">Genero:</p>
+            <p class="text-right o-color">{{personaje.gender}}</p>
             
-            <p class="negrita">Especie:</p>
-            <p class="text-right">{{personaje.species}}</p>
+            <p class="negrita o-color">Especie:</p>
+            <p class="text-right o-color">{{personaje.species}}</p>
     
-            <p class="negrita">Ultima locación (nombre):</p>
-            <p class="text-right">{{personaje.location.name}}</p>
+            <p class="negrita o-color">Ultima locación (nombre):</p>
+            <button (click)="vistaLocacion(personaje.location.url)" class="o-button-locacion negrita text-right">{{personaje.location.name}}</button>
     
-            <p class="negrita">Ultima locación (url):</p>
-            <a href="personaje.location.url" class="text-right">{{personaje.location.url}}</a>
+            <p class="negrita o-color">Ultima locación (url):</p>
+            <a class="text-right o-color">{{personaje.location.url}}</a>
     
           </div>
     
           <div class="o-box-table-cards-table-data-episodes o-border-top font-size">
             <div>
-                <p class="negrita">Episodios:</p>
+                <p class="negrita o-color">Episodios:</p>
             </div>
     
-            <div class="o-grid-episode">
-                <a *ngFor="let epi of personaje.episode" href="personaje.location.url" class="text-right">{{epi}}</a>
+            <div class="o-grid-episode o-color">
+                <a *ngFor="let epi of personaje.episode" class="text-right">{{epi}}</a>
             </div>
     
           </div>
         </mat-card-content>
-        <mat-card-actions>
-          <button mat-raised-button class="o-button-white-hover">
-            <mat-icon>create</mat-icon>
-        </button>
-        <button mat-raised-button color="warn" class="o-button-hover">
-          <mat-icon>delete</mat-icon>
-      </button>
-        </mat-card-actions>
       </mat-card>
 </div>

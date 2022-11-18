@@ -83,15 +83,25 @@ table {
     background-color: var(--hover-button-color);
 }
 
+.o-button-white-hover{
+    background-color: var(--pink-color);
+    color: var(--tertiary-color);
+}
+
 .o-button-white-hover:hover{
-    background-color: var(--hover-white-color);
+    background-color: var(--hover-pink-color);
 }
 
 .o-button-locacion{
     background-color: white;
     border: none;
     cursor: pointer;
+    color: var(--primary-color);
 }
+
+.o-button-locacion:hover{
+    color: var(--hover-button-color);
+  }
 
 @media (min-width: 1280px) and (max-width: 1400px){
 

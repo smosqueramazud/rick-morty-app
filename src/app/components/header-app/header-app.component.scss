@@ -16,10 +16,19 @@ mat-toolbar{
 
 
  a:hover,
- mat-icon:hover{
+ mat-icon:hover,
+ .o-inicio-button:hover{
   color: var(--primary-color) !important;
 }
  
+.o-box-menu-items{
+  border-right: 2px solid var(--tertiary-color);
+}
+
+.o-color-icon{
+  color: var(--secundary-color);
+}
+
 @media (min-width: 1280px) and (max-width: 1400px){
   .o-box-logo-marvel {
     width: 20vh;

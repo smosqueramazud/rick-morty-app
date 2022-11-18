@@ -11,3 +11,17 @@
     border-bottom: 1px solid gray;
     padding: 2vh 0 1vh 0;
   }
+
+  .o-aceptar-button{
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+  }
+
+  .o-aceptar-button:hover{
+    background-color: var(--hover-button-color);
+    color: var(--tertiary-color);
+  }
+
+  .o-title{
+    color: var(--green-color);
+  }
