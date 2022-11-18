@@ -61,7 +61,6 @@ export class EndpointsService {
    * @date 2022/11/15
    */
   getLocacion(link:any){
-      console.log(link)
       let url = link;
       return this.http.get(url);
   }

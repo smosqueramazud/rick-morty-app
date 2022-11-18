@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 import { HostListener } from '@angular/core';
 import { EndpointsService } from 'src/app/services/endpoints.service';
 import { Personaje } from 'src/app/models/personajes';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-detalle-personaje',
@@ -78,7 +80,7 @@ export class DetallePersonajeComponent implements OnInit {
       this.perso = this.personaje;
       let arrayFav = JSON.parse(sessionStorage.getItem('listaFavoritos')!);
       if(arrayFav.find((obj:any) => obj.id === this.perso.id) != undefined){
-        alert('Este personaje ya fue agregado a tu lista de favoritos')
+        Swal.fire('Este personaje ya fue agregado a tu lista de favoritos');
       }else{
         this.fav = true;
         arrayFav.push(this.personaje);

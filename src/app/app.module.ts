@@ -44,6 +44,7 @@ import { FormsModule } from '@angular/forms';
 import { DetallePersonajeComponent } from './pages/detalle-personaje/detalle-personaje.component';
 import { DetalleLocacionComponent } from './pages/detalle-locacion/detalle-locacion.component';
 import { DialogFavoritosComponent } from './components/dialog-favoritos/dialog-favoritos.component';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 @NgModule({
   declarations: [
@@ -93,6 +94,7 @@ import { DialogFavoritosComponent } from './components/dialog-favoritos/dialog-f
     // 
     HttpClientModule,
     FormsModule,
+    NgxSpinnerModule,
   ],
   providers: [HeaderAppComponent,
     DialogFavoritosComponent],

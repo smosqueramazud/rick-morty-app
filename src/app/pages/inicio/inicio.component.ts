@@ -7,6 +7,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EndpointsService } from 'src/app/services/endpoints.service';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-inicio',
@@ -20,7 +21,8 @@ export class InicioComponent implements OnInit {
   displayedColumns: string[] = ['imagen', 'nombre', 'estado', 'especie', 'ultima locacion', 'ultimo episodio', 'modificar'];
 
   constructor(private endpoints: EndpointsService,
-    private router: Router) { }
+    private router: Router,
+    private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
     this.obtenerPersonajes();
@@ -34,11 +36,13 @@ export class InicioComponent implements OnInit {
    * @date 2022/11/15
    */
   obtenerIformacionApi(){
+    this.spinner.show();
     this.endpoints.getAll().subscribe(
       res => {
-        console.log(res);
+        this.spinner.hide();
       },
       err => {
+        this.spinner.hide();
         console.log(err)
         alert(`Ha ocurrido un error consultando la lista de personajes, por favor intenta de nuevo mas tarde`)
       }
@@ -52,13 +56,14 @@ export class InicioComponent implements OnInit {
    * @date 2022/11/15
    */
   obtenerPersonajes(){
+    this.spinner.show();
     this.endpoints.getPersonajes().subscribe(
       res => {
-        console.log(res.results);
+        this.spinner.hide();
         this.arrayPersonajes = res.results;
-        console.log(this.arrayPersonajes);
       },
       err => {
+        this.spinner.hide();
         console.log(err)
         alert(`Ha ocurrido un error consultando la lista de personajes, por favor intenta de nuevo mas tarde`)
       }
@@ -87,11 +92,14 @@ export class InicioComponent implements OnInit {
    * @date 2022/11/15
    */
   vistaPersonaje(id:number){
+    this.spinner.show();
     this.endpoints.getPersonajeId(id).subscribe(
       res => {
+        this.spinner.hide();
         this.router.navigateByUrl('/personaje', {state: {res}});
       },
       err => {
+        this.spinner.hide();
         console.log(err)
         alert(`Ha ocurrido un error consultando la lista de personajes, por favor intenta de nuevo mas tarde`)
       }
@@ -105,11 +113,14 @@ export class InicioComponent implements OnInit {
    * @date 2022/11/15
    */
   vistaLocacion(url: string){
+    this.spinner.show();
     this.endpoints.getLocacion(url).subscribe(
       res => {
+        this.spinner.hide();
         this.router.navigateByUrl('/locacion', {state: {res}});
       },
       err => {
+        this.spinner.hide();
         console.log(err)
         alert(`Ha ocurrido un error consultando la lista de personajes, por favor intenta de nuevo mas tarde`)
       }
