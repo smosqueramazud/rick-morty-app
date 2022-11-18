@@ -1,126 +1,39 @@
 table {
     width: 100%;
     margin-top: 2vh;
-  }
-
-.o-box-button{
-    padding: 2vh;
-    display: grid;
-    grid-template-columns: 35% 52% 10%;
-    gap: 2vh;
 }
 
-.o-box-table{
+.o-box-table {
     padding: 0 2vh;
 }
 
-.o-box-button-buttons{
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2vh;
-    height: 5vh;
-}
-
-.o-box-button-buscadores{
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8vh;
-    height: 5vh;
-}
-
-
-.o-box-button-buscadores-box{
-    display: grid;
-    grid-template-columns: 75% 22%;
-    gap: 1vh;
-    
-}
-
-::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex{
-    height: 5vh !important;
-}
-
-.o-height{
-    height: 5vh;
-}
-
-.o-button-vehiculo{
-    height: 5vh;
-    background-color: var(--primary-color);
-    color: var(--tertiary-color);
-}
-
-.o-button-add{
-    width: 28vh;
-    background-color: var(--primary-color);
-    color: var(--tertiary-color);
-}
-
-.o-box-button-automovil{
-    display: flex;
-    justify-content: flex-end;
-}
-::ng-deep .mat-form-field-label-wrapper{
-    color: var(--secundary-color);
-}
-
-::ng-deep.mat-form-field-ripple{
-    background-color: var(--primary-color) !important;
-}
-
-::ng-deep.mat-form-field.mat-focused .mat-form-field-label {
-    color: var(--primary-color) !important;
-}
-
-::ng-deep .mat-header-cell{
+::ng-deep .mat-header-cell {
     font-weight: bold;
     color: var(--secundary-color);
 }
 
-.o-button-hover:hover{
-    background-color: var(--hover-button-color);
-}
 
-.o-button-white-hover{
+.o-button-pink-hover {
     background-color: var(--pink-color);
     color: var(--tertiary-color);
 }
 
-.o-button-white-hover:hover{
+.o-button-pink-hover:hover {
     background-color: var(--hover-pink-color);
 }
 
-.o-button-locacion{
+.o-button-locacion {
     background-color: white;
     border: none;
     cursor: pointer;
     color: var(--primary-color);
 }
 
-.o-button-locacion:hover{
+.o-button-locacion:hover {
     color: var(--hover-button-color);
-  }
+}
 
-@media (min-width: 1280px) and (max-width: 1400px){
+@media (min-width: 1280px) and (max-width: 1400px) {
 
-    .o-button-add{
-      width: 32vh;
-    }
 
-    .o-box-button-buttons,
-    .o-height,
-    .o-button-vehiculo{
-        height: 7vh;
-    }
-
-    ::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex{
-        height: 7vh !important;
-    }
-    
-    .o-box-button{
-        grid-template-columns: 35% 52% 11%;
-    }
-    
 }

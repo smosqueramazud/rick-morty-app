@@ -1,48 +1,48 @@
 .example-spacer {
-    flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
-mat-toolbar{
+mat-toolbar {
   background-color: var(--secundary-color);
   color: var(--tertiary-color);
 
 }
 
-.o-box-logo-marvel{
+.o-box-logo-app {
   width: 18vh;
   height: 7vh;
   margin-left: 2vh;
 }
 
 
- a:hover,
- mat-icon:hover,
- .o-inicio-button:hover{
+a:hover,
+mat-icon:hover,
+.o-inicio-button:hover {
   color: var(--primary-color) !important;
 }
- 
-.o-box-menu-items{
+
+.o-box-menu-items {
   border-right: 2px solid var(--tertiary-color);
 }
 
-.o-color-icon{
+.o-color-icon {
   color: var(--secundary-color);
 }
 
-@media (min-width: 1280px) and (max-width: 1400px){
-  .o-box-logo-marvel {
+@media (min-width: 1280px) and (max-width: 1400px) {
+  .o-box-logo-app {
     width: 20vh;
     height: 10vh;
   }
 }
 
 //Celulares
-@media (max-width: 1024px){
-  .o-movil{
+@media (max-width: 1024px) {
+  .o-movil {
     display: none;
   }
 
-  .o-box-logo-marvel {
+  .o-box-logo-app {
     width: 12vh;
     height: 5vh;
     margin-left: 8vh;
