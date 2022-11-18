@@ -1,3 +1,9 @@
+/** 
+* @class detalle-locacion
+* @description clase que contiene los metodos, funcionalidades y estructura de la vista de detalle del personaje
+* @author Sebastian Mosquera
+* @date 2022/11/15
+*/
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HostListener } from '@angular/core';
@@ -23,8 +29,12 @@ export class DetallePersonajeComponent implements OnInit {
     this.validarPersonaje();
   }
 
-  //Metodo que valida si hay un personaje en la page y asigna el personaje, y redirige al inicio en caso de 
-  //data indefinida para controlar errores
+  /** 
+   * @method validarPersonaje 
+   * @description Metodo que valida si hay un personaje en la page y asigna el personaje, y redirige al inicio en caso de data indefinida para controlar errores
+   * @author Sebastian Mosquera
+   * @date 2022/11/18
+   */
   validarPersonaje(){
     if(window.history.state.res === undefined && JSON.parse(sessionStorage.getItem('personaje')!) === null){
       this.router.navigateByUrl('/inicio');
@@ -38,23 +48,32 @@ export class DetallePersonajeComponent implements OnInit {
     }
   }
 
+  /** 
+   * @method favoritoAdd 
+   * @description Metodo que agrega un personaje como favorito
+   * @author Sebastian Mosquera
+   * @date 2022/11/17
+   */
   favoritoAdd(){
     this.fav = true;
     if(sessionStorage.getItem('listaFavoritos') === null){
       let array = [];
       array[0] = this.personaje;
-      console.log(array);
       sessionStorage.setItem('listaFavoritos', JSON.stringify(array));
     }else{
       let arrayFav = JSON.parse(sessionStorage.getItem('listaFavoritos')!);
-      console.log(arrayFav);
       arrayFav.push(this.personaje);
-      console.log(arrayFav);
       sessionStorage.setItem('listaFavoritos', JSON.stringify(arrayFav));
     }
 
   }
 
+  /** 
+   * @method favoritoRm 
+   * @description Metodo que quita un personaje como favorito
+   * @author Sebastian Mosquera
+   * @date 2022/11/17
+   */
   favoritoRm(){
     this.fav = false;
     let arrayFav = JSON.parse(sessionStorage.getItem('listaFavoritos')!);
@@ -63,20 +82,30 @@ export class DetallePersonajeComponent implements OnInit {
     sessionStorage.setItem('listaFavoritos', JSON.stringify(arrayFav));
   }
 
-    //metodo que se ejecuta cuando se oprime el botton del browser
+  /** 
+   * @method onPopState 
+   * @description Metodo que se ejecuta cuando se oprime el botton de atras del browser
+   * @author Sebastian Mosquera
+   * @date 2022/11/17
+   */
     @HostListener('window:popstate', ['$event'])
     onPopState() {
       sessionStorage.removeItem('personaje');
     }
 
+  /**
+   * @method vistaLocacion 
+   * @description Metodo encargado de consumir el servicio que trae la locacion del personake y que redirige a la vista locacion
+   * @author Sebastian Mosquera
+   * @date 2022/11/18
+   */
     vistaLocacion(url: string){
       this.endpoints.getLocacion(url).subscribe(
         res => {
           this.router.navigateByUrl('/locacion', {state: {res}});
         },
         err => {
-          console.log(err)
-          alert(`Ha ocurrido un error consultando la lista de personajes, por favor intenta de nuevo mas tarde`)
+          alert(`Ha ocurrido un error consultando la locación del personaje, por favor intenta de nuevo mas tarde`)
         }
       )
     }

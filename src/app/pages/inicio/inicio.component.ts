@@ -1,3 +1,9 @@
+/** 
+* @class inicio
+* @description clase que contiene los metodos, funcionalidades y estructura de la vista de inicio de la aplicación
+* @author Sebastian Mosquera
+* @date 2022/11/15
+*/
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EndpointsService } from 'src/app/services/endpoints.service';
@@ -21,8 +27,9 @@ export class InicioComponent implements OnInit {
     this.validarScreenWidth();
   }
 
-  /** @method ObtenerInformacionApi 
-   * @description Metodo en cargado de consumir el servicio que trae la informacion inicial de la api
+  /** 
+   * @method ObtenerInformacionApi 
+   * @description Metodo encargado de consumir el servicio que trae la informacion inicial de la api
    * @author Sebastian Mosquera
    * @date 2022/11/15
    */
@@ -38,6 +45,12 @@ export class InicioComponent implements OnInit {
     )
   }
 
+  /**
+   * @method obtenerPersonajes 
+   * @description Metodo encargado de consumir el servicio que trae todos los personajes
+   * @author Sebastian Mosquera
+   * @date 2022/11/15
+   */
   obtenerPersonajes(){
     this.endpoints.getPersonajes().subscribe(
       res => {
@@ -52,6 +65,12 @@ export class InicioComponent implements OnInit {
     )
   }
 
+  /**
+   * @method validarScreenWidth 
+   * @description Metodo encargado de validar el tamaño de la pantalla del dispositivo
+   * @author Sebastian Mosquera
+   * @date 2022/11/15
+   */
   validarScreenWidth(){
     if(screen.width <= 1024){
       this.movil = true;
@@ -61,8 +80,13 @@ export class InicioComponent implements OnInit {
     window.sessionStorage.setItem('movil', String(this.movil));
   }
 
+  /**
+   * @method vistaPersonaje 
+   * @description Metodo encargado de consumir el servicio que trae el personaje por su id y que redirige a la vista de detalles personajes
+   * @author Sebastian Mosquera
+   * @date 2022/11/15
+   */
   vistaPersonaje(id:number){
-
     this.endpoints.getPersonajeId(id).subscribe(
       res => {
         this.router.navigateByUrl('/personaje', {state: {res}});
@@ -74,6 +98,12 @@ export class InicioComponent implements OnInit {
     )
   }
 
+  /**
+   * @method vistaLocacion 
+   * @description Metodo encargado de consumir el servicio que trae la locacion del personake y que redirige a la vista locacion
+   * @author Sebastian Mosquera
+   * @date 2022/11/15
+   */
   vistaLocacion(url: string){
     this.endpoints.getLocacion(url).subscribe(
       res => {

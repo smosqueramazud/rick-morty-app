@@ -1,3 +1,9 @@
+/** 
+* @class endpoints 
+* @description clase que contiene los endpoints de la api donde se consumen los recursos de cada uno de ellos
+* @author Sebastian Mosquera
+* @date 2022/11/15
+*/
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -15,25 +21,45 @@ export class EndpointsService {
 
   }
 
-  //servicio que trae la informacion inicial de la api
+  /** 
+   * @method getAll 
+   * @description Metodo encargado de crear la peticion al endpoint que trae la informacion inicial de la api
+   * @author Sebastian Mosquera
+   * @date 2022/11/15
+   */
   getAll(): Observable<Informacion>{
       let url = this.urlApi;
       return this.http.get<Informacion>(url);
   }
 
-  //servicio que trae todos los personajes
+  /** 
+   * @method getPersonajes 
+   * @description Metodo encargado de crear la peticion al endpoint que trae todos los personajes
+   * @author Sebastian Mosquera
+   * @date 2022/11/15
+   */
   getPersonajes(): Observable<Personajes>{
       let url = `${this.urlApi}/character`;
       return this.http.get<Personajes>(url);
   }
 
-    //servicio que trae un personaje especifico por su id
+  /** 
+   * @method getPersonajeId 
+   * @description Metodo encargado de crear la peticion al endpoint que trae un personaje por su id
+   * @author Sebastian Mosquera
+   * @date 2022/11/15
+   */
   getPersonajeId(id:any){
       let url = `${this.urlApi}/character/${id}`;
       return this.http.get(url);
   }
 
-      //servicio que trae un personaje especifico por su id
+  /** 
+   * @method getPersonajeId 
+   * @description Metodo encargado de crear la peticion al endpoint que trae la locacion del personaje
+   * @author Sebastian Mosquera
+   * @date 2022/11/15
+   */
   getLocacion(link:any){
       console.log(link)
       let url = link;

@@ -1,3 +1,9 @@
+/** 
+* @class dialog-favoritos 
+* @description clase que contiene los metodos y funcionalidades del dialog de personajes favoritos
+* @author Sebastian Mosquera
+* @date 2022/11/15
+*/
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
@@ -19,27 +25,47 @@ export class DialogFavoritosComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.favoritos = JSON.parse(sessionStorage.getItem('listaFavoritos')!);
-    if(this.favoritos === null || this.favoritos === undefined) {
-      this.sinFavoritos = true;
-    }else{
-      this.sinFavoritos = false;
-    }
-    console.log(this.favoritos);
-    console.log( this.sinFavoritos);
+    this.validarFavritos();
   }
 
+  /** 
+   * @method onNoClick 
+   * @description Metodo que cierra del dialog
+   * @author Sebastian Mosquera
+   * @date 2022/11/17
+   */
   onNoClick(): void {
     this.dialogRef.close();
     this.router.navigateByUrl('/inicio');
   }
 
+  /** 
+   * @method favoritoRm 
+   * @description Metodo que quita un personaje como favorito
+   * @author Sebastian Mosquera
+   * @date 2022/11/17
+   */
   favoritoRm(posAraryFav: number){
     let arrayFav = JSON.parse(sessionStorage.getItem('listaFavoritos')!);
     arrayFav.splice(posAraryFav,1);
     sessionStorage.setItem('listaFavoritos', JSON.stringify(arrayFav));
     this.favoritos = JSON.parse(sessionStorage.getItem('listaFavoritos')!);
     this.clickFav = true;
+  }
+
+  /** 
+   * @method validarFavritos 
+   * @description Metodo que valida si existen favoritos
+   * @author Sebastian Mosquera
+   * @date 2022/11/17
+   */
+  validarFavritos(){
+    this.favoritos = JSON.parse(sessionStorage.getItem('listaFavoritos')!);
+    if(this.favoritos === null || this.favoritos === undefined) {
+      this.sinFavoritos = true;
+    }else{
+      this.sinFavoritos = false;
+    }
   }
 
 }

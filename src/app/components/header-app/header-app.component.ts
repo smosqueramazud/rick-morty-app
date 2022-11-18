@@ -1,3 +1,9 @@
+/** 
+* @class header-app
+* @description clase que contiene los metodos, funcionalidades y estructura del header de la aplicación
+* @author Sebastian Mosquera
+* @date 2022/11/15
+*/
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
@@ -20,6 +26,12 @@ export class HeaderAppComponent implements OnInit {
     console.log(this.movil)
   }
 
+  /** 
+   * @method openDialog 
+   * @description Metodo que abre el dialog de favoritos
+   * @author Sebastian Mosquera
+   * @date 2022/11/17
+   */
   openDialog(): void {
 
     const dialogConfig = new MatDialogConfig();
@@ -30,13 +42,24 @@ export class HeaderAppComponent implements OnInit {
     const dialogRef = this.dialog.open(DialogFavoritosComponent, dialogConfig);
   }
 
-  //metodo que regresa al inicio y limpia la variable locaion y personaje
+  /** 
+   * @method goInicio 
+   * @description Metodo que regresa al inicio y limpia la variable locacion y personaje del storage
+   * @author Sebastian Mosquera
+   * @date 2022/11/18
+   */
   goInicio(){
     this.router.navigateByUrl('/inicio');
     sessionStorage.removeItem('locacion');
     sessionStorage.removeItem('personaje');
   }
 
+  /** 
+   * @method openDocumentacion 
+   * @description Metodo que abre la documentacion de la api en una pestaña del browser
+   * @author Sebastian Mosquera
+   * @date 2022/11/18
+   */
   openDocumentacion(){
     window.open('https://rickandmortyapi.com/documentation/');
   }

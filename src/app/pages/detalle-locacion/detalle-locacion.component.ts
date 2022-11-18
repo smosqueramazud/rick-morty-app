@@ -1,3 +1,9 @@
+/** 
+* @class detalle-locacion
+* @description clase que contiene los metodos, funcionalidades y estructura de la vista de la locacion del personaje
+* @author Sebastian Mosquera
+* @date 2022/11/15
+*/
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HostListener } from '@angular/core';
@@ -18,8 +24,12 @@ export class DetalleLocacionComponent implements OnInit {
     this.validarLocacion();
   }
 
-  //Metodo que valida si hay una locacion en la page y asigna la locacion, y redirige al inicio en caso de 
-  //data indefinida para controlar errores
+  /** 
+   * @method validarLocacion 
+   * @description Metodo que valida si hay una locacion en la page y asigna la locacion, y redirige al inicio en caso de data indefinida para controlar errores
+   * @author Sebastian Mosquera
+   * @date 2022/11/18
+   */
   validarLocacion(){
     if(window.history.state.res === undefined && JSON.parse(sessionStorage.getItem('locacion')!) === null){
       this.router.navigateByUrl('/inicio');
@@ -33,7 +43,12 @@ export class DetalleLocacionComponent implements OnInit {
     }
   }
 
-  //metodo que se ejecuta cuando se oprime el botton del browser
+  /** 
+   * @method onPopState 
+   * @description Metodo que se ejecuta cuando se oprime el botton de atras del browser
+   * @author Sebastian Mosquera
+   * @date 2022/11/17
+   */
   @HostListener('window:popstate', ['$event'])
   onPopState() {
     sessionStorage.removeItem('locacion');
