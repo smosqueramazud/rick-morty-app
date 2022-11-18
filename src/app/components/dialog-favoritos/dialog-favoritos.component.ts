@@ -35,8 +35,12 @@ export class DialogFavoritosComponent implements OnInit {
    * @date 2022/11/17
    */
   onNoClick(): void {
-    this.dialogRef.close();
-    this.router.navigateByUrl('/inicio');
+    if(this.sinFavoritos){
+      this.dialogRef.close();
+    }else{
+      this.dialogRef.close();
+      this.router.navigateByUrl('/inicio');
+    }
   }
 
   /** 

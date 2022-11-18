@@ -6,7 +6,7 @@
 }
 
 .example-card {
-  width: 65vh;
+  width: 40%;
 }
 
 
@@ -24,4 +24,10 @@
 
 .o-color {
   color: var(--secundary-color);
+}
+
+@media (min-width: 1280px) and (max-width: 1400px) {
+  p{
+    font-size: 2.5vh;
+  }
 }
