@@ -33,6 +33,10 @@ table {
     color: var(--hover-button-color);
 }
 
+.o-img-personaje{
+    cursor: pointer;
+}
+
 @media (min-width: 1280px) and (max-width: 1400px) {
     table {
         width: 100%;

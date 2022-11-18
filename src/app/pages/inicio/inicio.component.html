@@ -8,7 +8,7 @@
         <ng-container matColumnDef="imagen">
             <th mat-header-cell *matHeaderCellDef> Imagen </th>
             <td mat-cell *matCellDef="let element"> 
-              <img src="{{element.image}}" alt="" width="50" height="50">    
+              <img src="{{element.image}}" alt="" width="50" height="50" (click)="vistaPersonaje(element.id)" class="o-img-personaje">    
           </td>
           </ng-container>
 

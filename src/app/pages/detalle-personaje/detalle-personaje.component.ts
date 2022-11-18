@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HostListener } from '@angular/core';
 import { EndpointsService } from 'src/app/services/endpoints.service';
+import { Personaje } from 'src/app/models/personajes';
 
 @Component({
   selector: 'app-detalle-personaje',
@@ -19,6 +20,19 @@ export class DetallePersonajeComponent implements OnInit {
   personaje: any;
   fav: boolean;
   idPersonaje = 0;
+
+  perso: Personaje = {created: '',
+    episode: null,
+    gender: 'string',
+    id: 0,
+    image: '',
+    location: '',
+    name: '',
+    origin: '',
+    species: '',
+    status: '',
+    type: '',
+    url: ''};
 
   constructor(private router: Router,
     private endpoints: EndpointsService,) { 
@@ -55,15 +69,21 @@ export class DetallePersonajeComponent implements OnInit {
    * @date 2022/11/17
    */
   favoritoAdd(){
-    this.fav = true;
     if(sessionStorage.getItem('listaFavoritos') === null){
+      this.fav = true;
       let array = [];
       array[0] = this.personaje;
       sessionStorage.setItem('listaFavoritos', JSON.stringify(array));
     }else{
+      this.perso = this.personaje;
       let arrayFav = JSON.parse(sessionStorage.getItem('listaFavoritos')!);
-      arrayFav.push(this.personaje);
-      sessionStorage.setItem('listaFavoritos', JSON.stringify(arrayFav));
+      if(arrayFav.find((obj:any) => obj.id === this.perso.id) != undefined){
+        alert('Este personaje ya fue agregado a tu lista de favoritos')
+      }else{
+        this.fav = true;
+        arrayFav.push(this.personaje);
+        sessionStorage.setItem('listaFavoritos', JSON.stringify(arrayFav));
+      }
     }
 
   }
@@ -77,8 +97,9 @@ export class DetallePersonajeComponent implements OnInit {
   favoritoRm(){
     this.fav = false;
     let arrayFav = JSON.parse(sessionStorage.getItem('listaFavoritos')!);
-    arrayFav.splice(this.idPersonaje, 1);
-    console.log(arrayFav);
+    this.perso = this.personaje;
+    const position = arrayFav.findIndex((obj:any) => obj.id == this.perso.id);
+    arrayFav.splice(position, 1);
     sessionStorage.setItem('listaFavoritos', JSON.stringify(arrayFav));
   }
 

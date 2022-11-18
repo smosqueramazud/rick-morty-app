@@ -35,11 +35,13 @@ export class DialogFavoritosComponent implements OnInit {
    * @date 2022/11/17
    */
   onNoClick(): void {
-    if(this.sinFavoritos){
+    if(this.sinFavoritos || !this.clickFav){
       this.dialogRef.close();
     }else{
       this.dialogRef.close();
       this.router.navigateByUrl('/inicio');
+      sessionStorage.removeItem('locacion');
+      sessionStorage.removeItem('personaje');
     }
   }
 
