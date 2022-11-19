@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-top: 4vh;
 }
 
 .example-card {
@@ -26,8 +25,22 @@
   color: var(--secundary-color);
 }
 
+.o-box-button {
+  padding: 2vh;
+}
+
+.button-back {
+  background-color: var(--primary-color);
+  color: var(--tertiary-color);
+}
+
+.o-button-hover:hover {
+  //hover solo cuando este activo
+  background-color: var(--hover-button-color);
+}
+
 @media (min-width: 1280px) and (max-width: 1400px) {
-  p{
+  p {
     font-size: 2.5vh;
   }
 }

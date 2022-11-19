@@ -132,4 +132,17 @@ export class DetallePersonajeComponent implements OnInit {
         }
       )
     }
+
+
+  /** 
+   * @method goInicio 
+   * @description Metodo que regresa al inicio y limpia la variable locacion y personaje del storage
+   * @author Sebastian Mosquera
+   * @date 2022/11/18
+   */
+  goInicio(){
+    this.router.navigateByUrl('/inicio');
+    sessionStorage.removeItem('locacion');
+    sessionStorage.removeItem('personaje');
+  }
 }

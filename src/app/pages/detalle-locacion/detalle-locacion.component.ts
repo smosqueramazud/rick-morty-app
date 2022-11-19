@@ -54,4 +54,15 @@ export class DetalleLocacionComponent implements OnInit {
     sessionStorage.removeItem('locacion');
   }
 
+    /** 
+   * @method goInicio 
+   * @description Metodo que regresa al inicio y limpia la variable locacion y personaje del storage
+   * @author Sebastian Mosquera
+   * @date 2022/11/18
+   */
+     goInicio(){
+      this.router.navigateByUrl('/inicio');
+      sessionStorage.removeItem('locacion');
+      sessionStorage.removeItem('personaje');
+    }
 }
